@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="BSCS23202_style.css">
+    <style>
+      s
+        .slide .game-image {
+            transition: none; 
+        }
+    </style>
+    <script>
+        var currentImageIndex = 0;
+        var images = [
+            "BSCS23202_image04.png",
+            "BSCS23202_image03.png"
+        ];
+
+        var productInfo = [
+            {
+                title: "Assassin's Creed Mirage: Collector's Edition",
+                price: "Get it now for only $59.99"
+            },
+            {
+                title: "Spiderman 2: Deluxe Edition",
+                price: "Only 2 left in stock!"
+            }
+        ];
+
+        function changeImageAndInfo() {
+            var gameImage = document.querySelector(".slide .game-image");
+            var gameTitle = document.querySelector(".slide h2");
+            var gamePrice = document.querySelector(".slide p");
+
+            gameImage.src = images[currentImageIndex];
+            gameTitle.textContent = productInfo[currentImageIndex].title;
+            gamePrice.textContent = productInfo[currentImageIndex].price;
+
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        setInterval(changeImageAndInfo, 3000); 
+    </script>
+    <title>GameStop</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="BSCS23202_Homepage.html">Home</a></li>
+                <li><a href="BSCS23202_Products.html">Products</a></li>
+                <li><a href="BSCS23202_Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section 1: About Us -->
+    <section class="about-us">
+        <div class="slider">
+            <!-- First slide -->
+            <div class="slide">
+                <img src="BSCS23202_image01.svg" alt="About Us Image">
+                <h1>GAME STOP </h1>
+                <p>The ultimate destination for gamers</p>
+            </div>
+            <div class="slide">
+                <img class="game-image" src="B" alt="Assassin's Creed Mirage">
+                <h2>Assassin's Creed Mirage: Collector's Edition</h2>
+                <p>Get it now for only $59.99</p>
+                <a href="BSCS23202_Products.html" class="button">Buy Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 2: Check Our Products -->
+<section class="products">
+    <div class="usp">
+        <i class="fas fa-truck"></i>
+        <p>🚚 Free shipping on orders over $50</p> 
+    </div>
+    <div class="usp">
+        <i class="fas fa-star"></i>
+        <p>⭐ 4.8/5 rating from over 1000 reviews</p> 
+    </div>
+    <div class="usp">
+        <i class="fas fa-percent"></i>
+        <p>🔥 Up to 50% off on selected items</p> 
+    </div>
+    <a href="BSCS23202_Products.html" class="button">View Products</a>
+</section>
+
+
+    <!-- Section 3: Footer -->
+    <footer class="contact-details">
+        <h2 style="font-size: 2em; color: #ff5722;">Contact Details:</h2>
+        <p><i class="fas fa-phone"></i> Cell Number: 355-100-451-4</p>
+        <p><i class="fas fa-envelope"></i> Email: support@gamestop.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Location: Lahore Model Town</p>
+    </footer>
+
+    <button id="back-to-top-button" class="back-to-top-button" style="background-color: #333; color: #fff; font-family: Arial, sans-serif; font-size: 1.2em; font-weight: bold; border-radius: 10px;">Click here to go to top</button>
+
+    <script>
+        const backButton = document.getElementById("back-to-top-button");
+   
+        backButton.addEventListener("click", () => {
+            document.documentElement.scrollTop = 0; 
+        });
+    </script>
+</body>
+</html>
